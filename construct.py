@@ -20,7 +20,7 @@ for k, v in COLORS.items():
     write(f".bg-{k} {{\n    background: {v};\n}}\n")
 
 for direction in "left|start|center|right|end|justify".split("|"):
-    write(f".text-{k} {{\n    text-align: {v};\n}}\n")
+    write(f".text-{direction} {{\n    text-align: {direction};\n}}\n")
 
 for pix in range(0, 25):
     # Cases like p-8, m-2
@@ -62,4 +62,5 @@ for vis in "visible|hidden".split("|"):
     write(f".{vis} {{\n    visibility: {vis};\n}}\n")
 
 pathlib.Path("style.css").write_text(style_css)
+pathlib.Path("docs/examples/tutorial/tuilwind.css").write_text(style_css)
 pathlib.Path("style.min.css").write_text(style_min_css)
