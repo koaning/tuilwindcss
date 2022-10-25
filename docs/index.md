@@ -10,7 +10,7 @@ You can find a list of tuilwindcss demos below
 
 ### Background Color
 
-```python title="Text Color Demo"
+```python title="Background Color Demo"
 --8<-- "docs/examples/bg.py"
 ```
 
@@ -38,7 +38,7 @@ You can also be specific in the direction of the padding. So you can specify:
 - `px-1` to add 1 padding to **horizontally**
 - `py-1` to add 1 padding to **vertically**
 
-```python title="Padding Demo"
+```python title="Padding Direction Demo"
 --8<-- "docs/examples/padding-sides.py"
 ```
 
@@ -56,9 +56,18 @@ You can also be specific in the direction of the padding. So you can specify:
 ```{.textual path="docs/examples/text-color.py"}
 ```
 
+#### Text Style
+
+```python title="Text Style Demo"
+--8<-- "docs/examples/text-style.py"
+```
+
+```{.textual path="docs/examples/text-style.py"}
+```
+
 #### Text Alignment
 
-```python title="Text Color Demo"
+```python title="Text Alignment Demo"
 --8<-- "docs/examples/text-alignment.py"
 ```
 
@@ -72,14 +81,14 @@ instances we try to offer classes that follow the spirit of tailwind.
 
 ### Dock 
 
-```python title="Padding Demo"
+```python title="Dock Demo"
 --8<-- "docs/examples/dock-demo-1.py"
 ```
 
 ```{.textual path="docs/examples/dock-demo-1.py"}
 ```
 
-```python title="Padding Demo"
+```python title="Dock Demo"
 --8<-- "docs/examples/dock-demo-2.py"
 ```
 

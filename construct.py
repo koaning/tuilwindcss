@@ -76,5 +76,5 @@ for font in ["bold", "italic", "reverse", "underline", "strike"]:
     write(f".{font} {{\n    text-style: {font};\n}}\n")
 
 pathlib.Path("style.css").write_text(style_css)
-pathlib.Path("docs/examples/tutorial/tuilwind.css").write_text(style_css)
+pathlib.Path("docs/examples/tuilwind.css").write_text(style_css)
 pathlib.Path("style.min.css").write_text(style_min_css)
