@@ -2,9 +2,7 @@ from textual.app import App, ComposeResult
 from textual.widgets import Static
 
 
-class PaddingDemo(App):
-    """A Textual app to manage stopwatches."""
-
+class BackgroundColorDemo(App):
     CSS_PATH = "tuilwind.css"
 
     def compose(self) -> ComposeResult:
@@ -16,5 +14,5 @@ class PaddingDemo(App):
         
 
 if __name__ == "__main__":
-    app = PaddingDemo()
+    app = BackgroundColorDemo()
     app.run()

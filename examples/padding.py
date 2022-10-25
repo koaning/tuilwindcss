@@ -3,8 +3,6 @@ from textual.widgets import Static
 
 
 class PaddingDemo(App):
-    """A Textual app to manage stopwatches."""
-
     CSS_PATH = "tuilwind.css"
 
     def compose(self) -> ComposeResult:
