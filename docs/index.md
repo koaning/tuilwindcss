@@ -11,31 +11,20 @@ You can find a list of tuilwindcss demos below
 ### Background Color
 
 ```python title="Text Color Demo"
---8<-- "docs/examples/tutorial/bg.py"
+--8<-- "docs/examples/bg.py"
 ```
 
-```{.textual path="docs/examples/tutorial/bg.py"}
-```
-
-### Text 
-
-#### Text Color
-
-```python title="Text Color Demo"
---8<-- "docs/examples/tutorial/text-color.py"
-```
-
-```{.textual path="docs/examples/tutorial/text-color.py"}
+```{.textual path="docs/examples/bg.py"}
 ```
 
 ### Padding
 
 
 ```python title="Padding Demo"
---8<-- "docs/examples/tutorial/padding.py"
+--8<-- "docs/examples/padding.py"
 ```
 
-```{.textual path="docs/examples/tutorial/padding.py"}
+```{.textual path="docs/examples/padding.py"}
 ```
 
 #### Padding Direction
@@ -50,10 +39,30 @@ You can also be specific in the direction of the padding. So you can specify:
 - `py-1` to add 1 padding to **vertically**
 
 ```python title="Padding Demo"
---8<-- "docs/examples/tutorial/padding-sides.py"
+--8<-- "docs/examples/padding-sides.py"
 ```
 
-```{.textual path="docs/examples/tutorial/padding-sides.py"}
+```{.textual path="docs/examples/padding-sides.py"}
+```
+
+### Text 
+
+#### Text Color
+
+```python title="Text Color Demo"
+--8<-- "docs/examples/text-color.py"
+```
+
+```{.textual path="docs/examples/text-color.py"}
+```
+
+#### Text Alignment
+
+```python title="Text Color Demo"
+--8<-- "docs/examples/text-alignment.py"
+```
+
+```{.textual path="docs/examples/text-alignment.py"}
 ```
 
 ## Textual Specific Classes
@@ -64,15 +73,15 @@ instances we try to offer classes that follow the spirit of tailwind.
 ### Dock 
 
 ```python title="Padding Demo"
---8<-- "docs/examples/tutorial/dock-demo-1.py"
+--8<-- "docs/examples/dock-demo-1.py"
 ```
 
-```{.textual path="docs/examples/tutorial/dock-demo-1.py"}
+```{.textual path="docs/examples/dock-demo-1.py"}
 ```
 
 ```python title="Padding Demo"
---8<-- "docs/examples/tutorial/dock-demo-2.py"
+--8<-- "docs/examples/dock-demo-2.py"
 ```
 
-```{.textual path="docs/examples/tutorial/dock-demo-2.py"}
+```{.textual path="docs/examples/dock-demo-2.py"}
 ```
