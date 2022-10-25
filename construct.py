@@ -22,7 +22,7 @@ for k, v in COLORS.items():
 for direction in "left|start|center|right|end|justify".split("|"):
     write(f".text-{direction} {{\n    text-align: {direction};\n}}\n")
 
-for pix in range(0, 25):
+for pix in range(0, 26):
     # Cases like p-8, m-2
     write(f".m-{pix} {{\n    margin: {pix};\n}}\n")
     write(f".p-{pix} {{\n    padding: {pix};\n}}\n")
@@ -47,6 +47,8 @@ for pix in range(0, 25):
 # Cases like w-auto, h-auto
 write(f".w-auto {{\n    width: auto;}}\n")
 write(f".h-auto {{\n    height: auto;}}\n")
+write(f".w-full {{\n    width: 100%;}}\n")
+write(f".h-full {{\n    height: 100%;}}\n")
 
 # # Cases like w-1/2, h-2/3
 # for frac, val in FRACTIONS.items():

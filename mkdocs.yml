@@ -1,0 +1,37 @@
+site_name: TuilwindCSS Documentation
+theme:
+  name: material
+  palette:
+    primary: white
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji
+  - md_in_html
+  - admonition
+  - def_list
+  - meta
+
+  - toc:
+      permalink: true
+      baselevel: 1
+  - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: textual
+          class: textual
+          format: !!python/name:textual._doc.format_svg
+        - name: rich
+          class: rich
+          format: !!python/name:textual._doc.rich
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - markdown.extensions.attr_list
