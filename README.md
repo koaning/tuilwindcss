@@ -1,8 +1,8 @@
-<img src="icon.png" width="125" height="125" align="right" />
-
 # tuilwindcss
 
 This project is inspired by [tailwind.css](https://tailwindcss.com/) to offers a similar set of classes that can be used directly to construct TUI apps with [Textual](https://textual.textualize.io/). It's an experimental project to see if it makes it easier to construct apps. 
+
+![](tuilwindcss.png)
 
 > Please check out tailwind.css if you haven't already. This project is not affiliated or endorsed by tailwind labs, but it's an awesome project.
 
