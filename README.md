@@ -4,7 +4,7 @@ This project is inspired by [tailwind.css](https://tailwindcss.com/) to offers a
 
 ![](tuilwindcss.png)
 
-> Please check out tailwind.css if you haven't already. This project is not affiliated or endorsed by tailwind labs, but it's an awesome project.
+> Note! This project is not affiliated or endorsed by tailwind labs, but it's an awesome project. Please check out [tailwind.css](https://tailwindcss.com/) if you haven't already.
 
 ## Contents 
 
