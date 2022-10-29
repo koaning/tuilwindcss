@@ -65,7 +65,7 @@ You can also be specific in the direction of the padding. So you can specify:
 #### Simple Margin
 
 
-```python title="Padding Demo"
+```python title="Margin Demo"
 --8<-- "docs/examples/margin.py"
 ```
 
@@ -74,16 +74,16 @@ You can also be specific in the direction of the padding. So you can specify:
 
 #### Margin Direction
 
-You can also be specific in the direction of the padding. So you can specify: 
+You can also be specific in the direction of the margin. So you can specify: 
 
-- `mt-1` to add 1 padding to the **top**
-- `mb-1` to add 1 padding to the **bottom**
-- `ml-1` to add 1 padding to the **left**
-- `mr-1` to add 1 padding to the **right**
-- `mx-1` to add 1 padding to **horizontally**
-- `my-1` to add 1 padding to **vertically**
+- `mt-1` to add 1 margin to the **top**
+- `mb-1` to add 1 margin to the **bottom**
+- `ml-1` to add 1 margin to the **left**
+- `mr-1` to add 1 margin to the **right**
+- `mx-1` to add 1 margin to **horizontally**
+- `my-1` to add 1 margin to **vertically**
 
-```python title="Padding Direction Demo"
+```python title="Margin Direction Demo"
 --8<-- "docs/examples/margin-sides.py"
 ```
 
