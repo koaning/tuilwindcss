@@ -74,7 +74,7 @@ You can also be specific in the direction of the padding. So you can specify:
 
 #### Margin Direction
 
-You can also be specific in the direction of the padding. So you can specify: 
+You can also be specific in the direction of the margin. So you can specify: 
 
 - `mt-1` to add 1 margin to the **top**
 - `mb-1` to add 1 margin to the **bottom**
