@@ -1,4 +1,5 @@
 import pathlib
+
 import srsly
 
 COLORS = srsly.read_json("data/colors.json")
@@ -8,14 +9,15 @@ BORDER_STYLES = srsly.read_json("data/border_styles.json")
 style_css = ""
 style_min_css = ""
 
+
 def write(text):
     global style_css
     global style_min_css
     style_css += text
-    style_min_css += text.replace(" ", "").replace("\n", "")
+    style_min_css += text.replace("    ", "").replace(" {", "{").replace("\n", "")
 
 
-# Add text/background colors 
+# Add text/background colors
 for k, v in COLORS.items():
     write(f".text-{k} {{\n    color: {v};\n}}\n")
     write(f".bg-{k} {{\n    background: {v};\n}}\n")
@@ -25,8 +27,12 @@ for k, v in COLORS.items():
         write(f".border-r-{border}-{k} {{\n    border-right: {border} {v};\n}}\n")
         write(f".border-t-{border}-{k} {{\n    border-top: {border} {v};\n}}\n")
         write(f".border-b-{border}-{k} {{\n    border-bottom: {border} {v};\n}}\n")
-        write(f".border-x-{border}-{k} {{\n    border-left: {border} {v};\n    border-right: {border} {v};\n}}\n")
-        write(f".border-y-{border}-{k} {{\n    border-top: {border} {v};\n    border-bottom: {border} {v};\n}}\n")
+        write(
+            f".border-x-{border}-{k} {{\n    border-left: {border} {v};\n    border-right: {border} {v};\n}}\n"
+        )
+        write(
+            f".border-y-{border}-{k} {{\n    border-top: {border} {v};\n    border-bottom: {border} {v};\n}}\n"
+        )
 
 
 for direction in "left|start|center|right|end|justify".split("|"):
@@ -80,3 +86,4 @@ for font in ["bold", "italic", "reverse", "underline", "strike"]:
 pathlib.Path("tuilwind.css").write_text(style_css)
 pathlib.Path("docs/examples/tuilwind.css").write_text(style_css)
 pathlib.Path("tuilwind.min.css").write_text(style_min_css)
+pathlib.Path("docs/examples/tuilwind.min.css").write_text(style_min_css)
