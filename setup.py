@@ -2,7 +2,7 @@ import os
 
 from setuptools import find_packages, setup
 
-base_packages = ["textual>=0.13.0","radicli>=0.0.15", "srsly>=2.4.6"]
+base_packages = ["textual>=0.13.0","radicli>=0.0.15", "srsly>=2.4.6", "parse>=1.19.0"]
 
 test_packages = [
     "pytest>=5.4.3",
