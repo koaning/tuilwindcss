@@ -5,7 +5,7 @@ text = """This text is certainly a fair bit long to proove a point.
 Oh my yes indeed, it really is a fair bit longer than many other examples!"""
 
 class TextAlignmentDemo(App):
-    CSS_PATH = "tuilwind.css"
+    CSS_PATH = "tuilwind.min.css"
 
     def compose(self) -> ComposeResult:
         """Called to add widgets to the app."""

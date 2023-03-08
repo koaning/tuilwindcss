@@ -14,7 +14,7 @@ def write(text):
     global style_css
     global style_min_css
     style_css += text
-    style_min_css += text.replace(" ", "").replace("\n", "")
+    style_min_css += text.replace("    ", "").replace(" {", "{").replace("\n", "")
 
 
 # Add text/background colors

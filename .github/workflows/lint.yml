@@ -33,7 +33,7 @@ jobs:
       - name: Run black
         if: always()
         shell: bash
-        run: python -m black --check .
+        run: python -m black --check tuilwindcss
 
       - name: Run isort
         if: always()

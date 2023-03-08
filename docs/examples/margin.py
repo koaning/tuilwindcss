@@ -4,7 +4,7 @@ from textual.widgets import Static
 
 
 class MarginDemo(App):
-    CSS_PATH = "tuilwind.css"
+    CSS_PATH = "tuilwind.min.css"
 
     def compose(self) -> ComposeResult:
         """Called to add widgets to the app."""
