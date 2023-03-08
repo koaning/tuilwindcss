@@ -1,13 +1,11 @@
 from pathlib import Path
 import srsly
 
-
-COLORS = srsly.read_json("data/colors.json")
-FRACTIONS = srsly.read_json("data/fractions.json")
-BORDER_STYLES = srsly.read_json("data/border_styles.json")
-
+from tuilwindcss.constants import COLORS, BORDER_STYLES
+from parse import compile
 
 class CSSWriter:
+    """A CSS writer"""
     def __init__(self):
         self._styles = {}
         self._construct()
@@ -98,39 +96,27 @@ class CSSWriter:
                     v = ";\n    ".join(v) if len(v) > 1 else f"    {v[0]};"
                     yield f"{k}" + "{\n" + f"{v}" + "\n}\n"
     
-    def write_css(self, path: Path, minified=False, src_files=None):
-        """Write into .css file"""
-        classes = set()
-        if src_files:
-            for src_file in src_files:
-                classes.update(self.fetch_classes(src_file))
-        
-        with open(path, "w") as f:
-            for style in self.iter_styles(minified=minified):
-                f.write(style)
-    
     def fetch_classes(self, path: Path):
         """Fetches classes from a py file."""
         text = path.read_text()
 
-        for query in ['classes="{classes}"', "classes='{classes}'"]:
-            p = compile(query)
-            found_classes = set()
-            for e in p.findall(text):
+        found_classes = set()
+        for query in [compile('classes="{classes}"'), compile("classes='{classes}'")]:
+            for e in query.findall(text):
                 for css_class in e.named['classes'].split(" "):
                     found_classes.add(css_class)
         return found_classes
+    
+    def write_css(self, path: Path, minified=False, src_file=None):
+        """Write into .css file"""
+        classes = set()
+        if src_file:
+            classes.update(self.fetch_classes(src_file))
+        
+        with open(path, "w") as f:
+            for style in self.iter_styles(minified=minified, classes=classes):
+                f.write(style)
 
 if __name__ == "__main__":
     writer = CSSWriter()
-    writer.write_json(path=Path("state.json"))
-    writer.write_css(path="tuilwind.demo.css")
-    writer.write_css(path="tuilwind.demo.min.css", minified=True)
-
-# pathlib.Path("tuilwind.css").write_text(style_css)
-# pathlib.Path("docs/examples/tuilwind.css").write_text(style_css)
-# pathlib.Path("tuilwind.min.css").write_text(style_min_css)
-# pathlib.Path("docs/examples/tuilwind.min.css").write_text(style_min_css)
-
-
-# print("Done!")
+    print(writer.fetch_classes(Path("docs/examples/bg.py")))

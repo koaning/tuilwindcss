@@ -2,25 +2,20 @@ from pathlib import Path
 from radicli import Arg, Radicli
 from parse import compile
 
+from .construct import CSSWriter
 
 cli = Radicli(help="Tuiwindcss: Tailwind for Textual.")
 
 
 
 @cli.command(
-    "reduce",
+    "construct",
     path=Arg(help="path to .py file that contains textual app"),
+    minified=Arg("--minified", "-m", help="minify the css file"),
+    pyfile=Arg("--pyfile", "-p", help="Python file with class definitions")
 )
-def text(path: Path):
-    text = path.read_text()
-
-    for query in ['classes="{classes}"', "classes='{classes}'"]:
-        p = compile(query)
-        found_classes = set()
-        for e in p.findall(text):
-            for css_class in e.named['classes'].split(" "):
-                found_classes.add(css_class)
-    return found_classes
+def construct(path: Path, minified: bool=False, pyfile: Path=None):
+    CSSWriter().write_css(path=path, minified=minified, src_file=pyfile)
 
 
 if __name__ == "__main__":
