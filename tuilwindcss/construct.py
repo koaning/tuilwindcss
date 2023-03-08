@@ -4,16 +4,18 @@ import srsly
 from tuilwindcss.constants import COLORS, BORDER_STYLES
 from parse import compile
 
+
 class CSSWriter:
     """A CSS writer"""
+
     def __init__(self):
         self._styles = {}
         self._construct()
-    
+
     def add_style(self, class_name: str, *content: str) -> None:
         """Add a css-class with contents tot the writer"""
         self._styles[class_name] = content
-    
+
     def _construct(self):
         # Add text/background colors
         for k, v in COLORS.items():
@@ -24,9 +26,19 @@ class CSSWriter:
                 self.add_style(f".border-l-{border}-{k}", f"border-left: {border} {v}")
                 self.add_style(f".border-r-{border}-{k}", f"border-right: {border} {v}")
                 self.add_style(f".border-t-{border}-{k}", f"border-top: {border} {v}")
-                self.add_style(f".border-b-{border}-{k}", f"border-bottom: {border} {v}")
-                self.add_style(f".border-x-{border}-{k}", f"border-left: {border} {v}", f"border-right: {border} {v};")
-                self.add_style(f".border-y-{border}-{k}", f"border-top: {border} {v}", f"border-bottom: {border} {v};")
+                self.add_style(
+                    f".border-b-{border}-{k}", f"border-bottom: {border} {v}"
+                )
+                self.add_style(
+                    f".border-x-{border}-{k}",
+                    f"border-left: {border} {v}",
+                    f"border-right: {border} {v};",
+                )
+                self.add_style(
+                    f".border-y-{border}-{k}",
+                    f"border-top: {border} {v}",
+                    f"border-bottom: {border} {v};",
+                )
 
         for direction in "left|start|center|right|end|justify".split("|"):
             self.add_style(f".text-{direction}", f"text-align: {direction}")
@@ -38,8 +50,12 @@ class CSSWriter:
             # Cases like px-2, my-1
             self.add_style(f".mx-{pix}", f"margin-left: {pix}", f"margin-right: {pix}")
             self.add_style(f".my-{pix}", f"margin-top: {pix}", f"margin-bottom: {pix}")
-            self.add_style(f".px-{pix}", f"padding-left: {pix}", f"padding-right: {pix}")
-            self.add_style(f".py-{pix}", f"padding-top: {pix}", f"padding-bottom: {pix}")
+            self.add_style(
+                f".px-{pix}", f"padding-left: {pix}", f"padding-right: {pix}"
+            )
+            self.add_style(
+                f".py-{pix}", f"padding-top: {pix}", f"padding-bottom: {pix}"
+            )
             # Cases like pt-1, mb-1, pl-3, mr-2
             self.add_style(f".mt-{pix}", f"margin-top: {pix}")
             self.add_style(f".mb-{pix}", f"margin-bottom: {pix}")
@@ -75,11 +91,11 @@ class CSSWriter:
         # Cases like `bold`
         for font in ["bold", "italic", "reverse", "underline", "strike"]:
             self.add_style(f".{font}", f"text-style: {font}")
-    
+
     def write_json(self, path: Path):
         """Write the state as a json file."""
         srsly.write_json(path, self._styles)
-    
+
     def iter_styles(self, minified=True, classes=None):
         """Iterate over all the generated styles"""
         if not classes:
@@ -95,7 +111,7 @@ class CSSWriter:
                         v[0] = "    " + v[0]
                     v = ";\n    ".join(v) if len(v) > 1 else f"    {v[0]};"
                     yield f"{k}" + "{\n" + f"{v}" + "\n}\n"
-    
+
     def fetch_classes(self, path: Path):
         """Fetches classes from a py file."""
         text = path.read_text()
@@ -103,19 +119,20 @@ class CSSWriter:
         found_classes = set()
         for query in [compile('classes="{classes}"'), compile("classes='{classes}'")]:
             for e in query.findall(text):
-                for css_class in e.named['classes'].split(" "):
-                    found_classes.add(css_class)
+                for css_class in e.named["classes"].split(" "):
+                    found_classes.add(f".{css_class}")
         return found_classes
-    
+
     def write_css(self, path: Path, minified=False, src_file=None):
         """Write into .css file"""
         classes = set()
         if src_file:
-            classes.update(self.fetch_classes(src_file))
-        
+            classes.update(self.fetch_classes(path=Path(src_file)))
+
         with open(path, "w") as f:
             for style in self.iter_styles(minified=minified, classes=classes):
                 f.write(style)
+
 
 if __name__ == "__main__":
     writer = CSSWriter()
