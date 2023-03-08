@@ -28,7 +28,7 @@ jobs:
       - name: Run flake8
         if: always()
         shell: bash
-        run: python -m flake8 prodigy tests
+        run: python -m flake8 tuilwindcss
 
       - name: Run black
         if: always()
