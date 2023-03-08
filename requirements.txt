@@ -1,0 +1,2 @@
+textual>=0.13.0
+radicli>=0.0.15
