@@ -1,6 +1,5 @@
 from pathlib import Path
 
-from parse import compile
 from radicli import Arg, Radicli
 
 from .construct import CSSWriter
