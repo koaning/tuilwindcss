@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Static
 from textual.containers import Vertical
+from textual.widgets import Static
 
 
 class PaddingDemo(App):
