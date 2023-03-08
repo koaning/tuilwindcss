@@ -16,14 +16,14 @@ The documentation page gives a visual gallery of all the features of the library
 
 ## Download
 
-To use the CSS file locally, you can easily download it via: 
+To use the most recent CSS file locally, you can easily download it via: 
 
 ```
-wget https://github.com/koaning/tuilwindcss/blob/main/tuilwind.css
+wget https://raw.githubusercontent.com/koaning/tuilwindcss/main/tuilwind.css
 ```
 
 You can also pick the minified version if you prefer. 
 
 ```
-wget https://github.com/koaning/tuilwindcss/blob/main/tuilwind.min.css
+wget https://raw.githubusercontent.com/koaning/tuilwindcss/main/tuilwind.min.css
 ```
