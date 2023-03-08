@@ -1,8 +1,9 @@
 from pathlib import Path
-import srsly
 
-from tuilwindcss.constants import COLORS, BORDER_STYLES
+import srsly
 from parse import compile
+
+from tuilwindcss.constants import BORDER_STYLES, COLORS
 
 
 class CSSWriter:
