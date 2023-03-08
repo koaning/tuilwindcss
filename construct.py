@@ -80,3 +80,4 @@ for font in ["bold", "italic", "reverse", "underline", "strike"]:
 pathlib.Path("tuilwind.css").write_text(style_css)
 pathlib.Path("docs/examples/tuilwind.css").write_text(style_css)
 pathlib.Path("tuilwind.min.css").write_text(style_min_css)
+pathlib.Path("docs/examples/tuilwind.min.css").write_text(style_min_css)
