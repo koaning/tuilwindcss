@@ -27,3 +27,11 @@ You can also pick the minified version if you prefer.
 ```
 wget https://raw.githubusercontent.com/koaning/tuilwindcss/main/tuilwind.min.css
 ```
+
+## WIP Library
+
+There's a library in the making that can be installed via:
+
+```
+python -m pip install "tuilwindcss @ git+https://github.com/koaning/tuilwindcss.git"
+```
