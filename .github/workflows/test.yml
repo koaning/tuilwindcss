@@ -27,12 +27,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install
-        run: pip install -r requirements.txt
-
-      # This test workflow isn't the super picky and careful one we use
-      # where we install from source etc. This one should fail on most
-      # code bugs, and for now my problem is that I can't login to
-      # Azure Pipelines to see the errors.
+        run: |
+          pip install -e ".[dev]"
+      - name: Run generate command
+        run: |
+          python -m tuilwindcss construct out.css
+          python -m tuilwindcss construct out.css --minified
+          python -m tuilwindcss construct out.css --minified --pyfile docs/examples/border-sides.py
       - name: Run doc tests
         run: |
           textual run docs/examples/bg.py --screenshot 1
