@@ -95,7 +95,7 @@ You can also be specific in the direction of the margin. So you can specify:
 
 #### Text Color
 
-This project attemps to mimic the tet colors that [tailwind.css provides](https://tailwindcss.com/docs/customizing-colors). 
+This project attemps to mimic the text colors that [tailwind.css provides](https://tailwindcss.com/docs/customizing-colors). 
 
 <details>
   <summary><b>Overview of all colors.</b></summary>
